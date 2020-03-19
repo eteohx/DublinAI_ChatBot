@@ -1,3 +1,3 @@
 # DublinAI_ChatBot
 
-A project exploring building chatbots for making recommendations to customers
+A project exploring building a chatbot for making recommendations to customers
