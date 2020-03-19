@@ -5,24 +5,20 @@ Created on Wed Mar 18 13:54:21 2020
 @author: Emily Teoh
 """
 
-import slack
 import os
+import slack
+import nest_asyncio
+from slackeventsapi import SlackEventAdapter
 import nest_asyncio
 
+# Our app's Slack Event Adapter for receiving actions via the Events API
 location = "/G:/My Drive/DublinAI/Mini Projects/chatbot/"  # replace with the full folder path where you downloaded the github repo
 nest_asyncio.apply()
 
-###################################################################
-######## Slack configuration   ##########################
-###################################################################
 slack_bot_token = os.environ['SLACK_BOT_TOKEN']
 slack_verification_token = os.environ['SLACK_VERIFICATION_TOKEN']
+slack_signing_secret = os.environ["SLACK_SIGNING_SECRET"]
 
-#client = slack.WebClient(token=SLACK_BOT_TOKEN)
 slack_client = slack.WebClient(token=slack_bot_token)
+slack_events_adapter = SlackEventAdapter(slack_signing_secret, "/slack/events")
 
-#client.chat_postMessage(
-#  channel="#general",
-#  text="testing :tada:"
-#)
-#
