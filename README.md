@@ -6,5 +6,8 @@ A project exploring building a chatbot for making recommendations to customers
 
 Current progress: Got Slack interface to work
 
+Data:
+https://www.kaggle.com/rounakbanik/the-movies-dataset
+
 Libraries: 
 https://github.com/slackapi
