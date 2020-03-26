@@ -17,13 +17,13 @@ from movie_recommender import movies_similar_to
 
 # Initialize with empty value to start the conversation.
 session_df = pd.DataFrame({},columns=['timestamp', 'user', 'context','entity']) #stores the session details of the user
-session_open = 0
+session_closed = 1
 
 # constants
 @slack_events_adapter.on("message")
 def handle_message(event_data):    
     global bot_id
-    global session_open
+    global session_closed
     global session_df
     store = 0
     context = ''
@@ -31,12 +31,12 @@ def handle_message(event_data):
     # parse message
     text,channel,timestamp,user,full_message = parse_bot_commands(event_data)
 
-    if not session_open:
+    if session_closed:
        if bot_id in text:
                 message = "Hello <@%s>! :tada: I'm MovieBot and I can recommend a movie to you. What genre are you in the mood for?" % user
                 slack_client.chat_postMessage(channel=channel,text=message)
                 context = 'start_conversation'
-                session_open = 1
+                session_closed = 0
                 store = 1
     else:  
         context,entity = get_context_entity(text, session_df, user) # NLP          
@@ -50,7 +50,7 @@ def handle_message(event_data):
             movies = movies_similar_to(genre,entity)
             message = "Got it! I think you might like these films: %s. Have a nice day!" % movies.title()    
             slack_client.chat_postMessage(channel=channel,text=message)
-            session_open = 0 
+            session_closed = 1 
             store = 1
         elif context == 'insult':
             if last_context(session_df,user) == 'information_genre':
