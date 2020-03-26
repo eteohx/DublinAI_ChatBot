@@ -56,7 +56,7 @@ def handle_message(event_data):
             if last_context(session_df,user) == 'information_genre':
                 message = "<@%s>, that's not very nice, but I'll let it slide! :( Name a movie you like."   % user
             else:
-                message = "<@%s>, that's not very nice! :( Let's start again. Name a genre."
+                message = "<@%s>, that's not very nice! :( Let's start again. Name a genre." % user
             slack_client.chat_postMessage(channel=channel,text=message)        
         elif context == 'incomprehensible':
             if last_context(session_df,user) == 'information_genre':
