@@ -1,8 +1,8 @@
-**ChatBot - Recommender**
+## ChatBot - Recommender
 
 
 
-Background
+# Background
 
 A chatbot refers to software that can &#39;converse&#39; via written text or auditory methods for the purposes of retrieving information and simulating an interaction with a real person.
 
@@ -29,17 +29,17 @@ The NLP layer needs to be able to extract and generate that information.
 
 
 
-Problem Statement
+# Problem Statement
 
 Customers have a lot of choice when it comes to selecting a movie to watch. Can we build a ChatBot to offer them options based on their stated preferences?
 
 
 
-Scope
+# Scope
 
 We will start with a closed domain, rule-based bot for movie recommendation using a Kaggle dataset. There are some useful tutorials doing this, and APIs for the UI and NLP layers. These tools will be used as a starting point. We will then try some custom NLP.
 
-Resources
+# Resources
 
 (Tutorials)
 
@@ -63,10 +63,10 @@ IBM Watson, Python
 
 [https://www.kaggle.com/rounakbanik/movie-recommender-systems/data](https://www.kaggle.com/rounakbanik/movie-recommender-systems/data)
 
-Deliverables
+# Deliverables
 
 Bot (probably on Slack) that will interact with a user to figure out which movie(s) would best suit their preferences
 
-Extensions
+# Extensions
 
 Maybe to books or music. Datasets:[https://github.com/caserec/Datasets-for-Recommender-Systems](https://github.com/caserec/Datasets-for-Recommender-Systems)
