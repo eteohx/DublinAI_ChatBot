@@ -8,7 +8,7 @@ A chatbot refers to software that can &#39;converse&#39; via written text or aud
 
 Chatbots fall into several different classes:
 
-![Image description](link-to-image)
+![Image description](https://github.com/eteohx/DublinAI_ChatBot/blob/master/images/components.png)
 
 Open domain bots are not topic specific (e.g. Siri, Google Assistant) and try to imitate humanlike conversation. But they cannot answer a specific, domain-based question.
 
@@ -16,7 +16,7 @@ Closed domain bots answer specific questions. Rule-based ones are the simplest t
 
 There are several components to building a chat bot – the user interface, the NLP layer, the knowledge base and the data store
 
-![Image description](link-to-image)
+![Image description](https://github.com/eteohx/DublinAI_ChatBot/blob/master/images/conversation_framework.png)
 
 For a closed-domain recommender bot (as we&#39;re considering here), it needs to understand the following to respond to a user question:
 
