@@ -28,28 +28,28 @@ def handle_message(event_data):
     store = 0
     context = ''
     entity = ''
+    message = ''
     # parse message
     text,channel,timestamp,user,full_message = parse_bot_commands(event_data)
 
     if session_closed:
        if bot_id in text:
-                message = "Hello <@%s>! :tada: I'm MovieBot and I can recommend a movie to you. What genre are you in the mood for?" % user
-                slack_client.chat_postMessage(channel=channel,text=message)
-                context = 'start_conversation'
-                session_closed = 0
-                store = 1
+           message = "Hello <@%s>! :tada: I'm MovieBot and I can recommend a movie to you. What genre are you in the mood for?" % user
+           context = 'start_conversation'
+           session_closed = 0
+           store = 1            
+           slack_client.chat_postMessage(channel=channel,text=message)
+
     else:  
         context,entity = get_context_entity(text, session_df, user) # NLP          
         if context == 'information_genre':
            message = "Okay! Please name a movie you like."
-           slack_client.chat_postMessage(channel=channel,text=message)
            store = 1
         elif context == 'information_other_movie':
             genre = last_entity(session_df,user)
             # search database
             movies = movies_similar_to(genre,entity)
             message = "Got it! I think you might like these films: %s. Have a nice day!" % movies.title()    
-            slack_client.chat_postMessage(channel=channel,text=message)
             session_closed = 1 
             store = 1
         elif context == 'insult':
@@ -57,18 +57,17 @@ def handle_message(event_data):
                 message = "<@%s>, that's not very nice, but I'll let it slide! :( Name a movie you like."   % user
             else:
                 message = "<@%s>, that's not very nice! :( Let's start again. Name a genre." % user
-            slack_client.chat_postMessage(channel=channel,text=message)        
         elif context == 'incomprehensible':
             if last_context(session_df,user) == 'information_genre':
                 message = "Sorry, I don't know that one! Name another movie please."   % user
             else:
                 message = "Sorry, I didn't understand that. Let's start again. Name a genre."
-            slack_client.chat_postMessage(channel=channel,text=message)
+        slack_client.chat_postMessage(channel=channel,text=message)
                 
     # save context and entities to log
     
     if store:
-        count = session_df.size
+        count = session_df.shape[0]
         session_df.loc[count] = [timestamp,user,context,entity]
         
 # Error events 
