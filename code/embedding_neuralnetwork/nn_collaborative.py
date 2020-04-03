@@ -185,19 +185,3 @@ ground_truth = np.asarray(ground_truth).ravel()
 predictions = np.asarray(predictions).ravel()
 final_loss = np.sqrt(np.mean((predictions - ground_truth)**2))
 print(f'Final RMSE: {final_loss:.4f}')
-
-a = np.unique(X_valid.user_id)
-b = np.unique(X_valid.movie_id)
-
-Y = np.zeros((b.size,40000))
-pred = np.zeros((b.size,40000))
-
-for i in range(40000):
-    for j in range(len(b)):
-        p = np.asarray(X_valid.user_id) == a[i]
-        q = np.asarray(X_valid.movie_id) == b[j]
-        r = np.where(p*q)
-        if r[0].size:
-            Y[j][i] = ground_truth[r]
-            pred[j][i] = predictions[r] 
-            print(str(i)+ ' ' + str(j) + ' ')
