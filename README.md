@@ -4,7 +4,7 @@ A project exploring building a chatbot for making recommendations to customers
 
 
 Current progress: 
-- Trying out collaborative filtering recommender algorithms to get embeddings/factorization for movies - RMSE is ~0.81 for the neural network
+- Trying out collaborative filtering recommender algorithms to get embeddings/factorizations for movies - RMSE is ~0.81 for the neural network
 - Plan is to then use the movie embeddings to pick the closest movie to a movie that our cold-start user likes
 
 
