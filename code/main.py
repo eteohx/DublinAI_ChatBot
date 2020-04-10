@@ -48,7 +48,7 @@ def handle_message(event_data):
         elif context == 'information_other_movie':
             genre = last_entity(session_df,user)
             # search database
-            movies = movies_similar_to(genre,entity)
+            movies,_ = movies_similar_to(entity,5,genre,method = 'collab',exclude_collection = True)
             message = "Got it! I think you might like these films: %s. Have a nice day!" % movies.title()    
             session_closed = 1 
             store = 1
@@ -59,7 +59,7 @@ def handle_message(event_data):
                 message = "<@%s>, that's not very nice! :( Let's start again. Name a genre." % user
         elif context == 'incomprehensible':
             if last_context(session_df,user) == 'information_genre':
-                message = "Sorry, I don't know that one! Name another movie please."   % user
+                message = "Sorry, I don't know that one! Name another movie please."
             else:
                 message = "Sorry, I didn't understand that. Let's start again. Name a genre."
         slack_client.chat_postMessage(channel=channel,text=message)
