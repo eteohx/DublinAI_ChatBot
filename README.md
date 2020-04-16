@@ -11,4 +11,5 @@ We used these trained embeddings in our chatbot.
 - Evaluation for (simulated) cold-start users: Using just the embeddings, we find k closest movies to a particular movie that has been watched/rated by a user. We then check how many of these k movies have actually been watched by the user.
 
 Slack-interface:
+
 <img src="https://github.com/eteohx/DublinAI_ChatBot/blob/master/reports/images/test_bot.PNG" width="500" height="350">
