@@ -25,7 +25,6 @@ backports.os=0.1.1=py37_0
 backports.shutil_get_terminal_size=1.0.0=py37_2
 backports.tempfile=1.0=py_1
 backports.weakref=1.0.post1=py_1
-beautifulsoup4=4.8.0=py37_0
 bitarray=1.0.1=py37he774522_0
 bkcharts=0.2=py37_0
 blas=1.0=mkl

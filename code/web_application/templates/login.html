@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>Welcome to MovieBot!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <h1>
+      <p class="text-center">MovieBot</p>
+      </h1>
+      <img src="https://i.ibb.co/Bg1hBqK/moviebot.png" class="rounded mx-auto d-block" alt="movie bot"  width="200" height="200">
+      <br>
+      <h3 class="text-center"> Enter username to chat </h3>
+      <br>
+      <form action="" method="post" >
+        <div class="form-group row justify-content-center">
+        <label for="formGroupExampleInput"> </label>        
+        <input type="text" placeholder="Username" name="username" value="{{
+          request.form.username}}">
+          </div>
+        <div class="form-group row justify-content-center">
+        <input class="btn btn-primary" type="submit" value="Enter">
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
+
