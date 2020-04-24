@@ -1,6 +1,6 @@
 # DublinAI_ChatBot
 
-This project explores building a chatbot web application that makes movie recommendations to users. 
+This project explores building a chatbot application that makes movie recommendations to users. 
 
 
 ## Folders and files in this repo:
@@ -18,9 +18,17 @@ This project explores building a chatbot web application that makes movie recomm
 ## Screenshots of Application
 
 Web interface: 
+
 <img src="https://github.com/eteohx/DublinAI_ChatBot/blob/master/reports/images/webdemo.PNG" width="500" height="350">
 
 Slack interface:
+
 <img src="https://github.com/eteohx/DublinAI_ChatBot/blob/master/reports/images/test_bot.PNG" width="500" height="350">
 
-## Resources used
+## Resources 
+* [Movielens dataset] https://grouplens.org/datasets/movielens/
+* [Implementing a recommender system using deep learning] https://medium.com/@iliazaitsev/how-to-implement-a-recommendation-system-with-deep-learning-and-pytorch-2d40476590f9
+* [Setting up a Slack Bot] https://github.com/slackapi/python-slack-events-api
+* [Bootstrap CSS Library] https://getbootstrap.com/
+
+
