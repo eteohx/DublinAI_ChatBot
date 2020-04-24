@@ -1,15 +1,25 @@
 # DublinAI_ChatBot
 
-A project exploring building a chatbot for making movie recommendations to users
+This project explores building a chatbot web application that makes movie recommendations to users. An overview of the project is 
 
+## Folders and files in this repo:
 
-Current project status:
-- Front end: Designed a simple web chat UI (but it is still only hosted on my local machine); also able to deploy the chatbot on Slack on my personal workspace
-- NLP: The bot asks users two questions - their preferred genre of movie, and to name another movie that they like. In the database, we have 20 different genres and ~4000 movie titles. To account for the fact that the user might use different terminology than the entities in the database (e.g. they might say 'scary movie' instead of 'horror'), the NLP module checks the cosine similarity between the GloVe vectors of the user's input and all entities to find the closest match.
-- Collaborative filtering recommender system: An embedded neural network was trained on a large set of user ratings to predict individual user movie ratings. RMSE of this model is ~0.81 (comparable with state-of-the-art). The trained movie embeddings appear to capture similarity - e.g. Pixar movies are close together in the vector space, movies from the same collection are also close together. We evaluated how well we can predict a user's rating of a particular movie by weighting the user's ratings of other movies by the cosine distance of the embedding vectors of those movies to the movie in question. This resulted in an RMSE of ~0.94. This is (as one would expected) poorer than the performance of our trained neural network, but still suggests that the embeddings capture something about users' tastes in movies. 
-We used these trained embeddings in our chatbot.
-- Evaluation for (simulated) cold-start users: Using just the embeddings, we find k closest movies to a particular movie that has been watched/rated by a user. We then check how many of these k movies have actually been watched by the user.
+* [Web API]https://github.com/eteohx/DublinAI_ChatBot/tree/master/code/web_application
+** app.py: Flask application with routes to a login page and a chat page, where it executes a simple dialogue flow through state management 
+** nlp_context_entity_wa.py: NLP to link users' answers to entities in the database
+** movie_recommender_wa.py: Recommender system that takes in entities as input and returns k movies that are most suitable based on  cosine similarity of movie embedding vectors. The embedding vectors were produced by training an embedded neural network to predict user ratings.
+* [Slack API]https://github.com/eteohx/DublinAI_ChatBot/tree/master/code/slack_application : As above, but with code for interfacing with Slack (receiving events via the Slack Events API and sending messages via Slack Web API). To set up a Slack Bot, see: https://github.com/slackapi/python-slack-events-api
+* [Embedded Neural Network]https://github.com/eteohx/DublinAI_ChatBot/tree/master/code/recommender_embedded_nn Code for setting up and training an embedded neural network to predict user ratings (collaborative filtering). RMSE of this model is ~0.81 (comparable with state-of-the-art). 
+* [Evaluation of chatbot recommender system]https://github.com/eteohx/DublinAI_ChatBot/blob/master/code/movie_recommender_evaluation.ipynb We test the system on unseen user rating data. We input one movie watched and rated positively by each user, and evaluate the precision of the three recommended outputs of the system. 
+* [Data munging]https://github.com/eteohx/DublinAI_ChatBot/blob/master/code/preprocessData.ipynb Pre-processing of movie metadata
+* [Visualising Movie Embeddings]https://github.com/eteohx/DublinAI_ChatBot/blob/master/code/visualise_embeddings.ipynb Projecting the movie embedding vectors to two dimensions and visualising how movies with various features are distributed in this vector space
+
+## Screenshots of Application
+
+Web interface: 
+<img src="https://github.com/eteohx/DublinAI_ChatBot/blob/master/reports/images/webdemo.PNG" width="500" height="350">
 
 Slack interface:
-
 <img src="https://github.com/eteohx/DublinAI_ChatBot/blob/master/reports/images/test_bot.PNG" width="500" height="350">
+
+## Resources used
