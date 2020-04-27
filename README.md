@@ -2,7 +2,7 @@
 
 This project explores building a chatbot application that makes movie recommendations to users.
 
-Demo: http://34.244.10.159/login
+Web application demo: http://34.244.10.159/login
 
 
 ## Folders and files in this repo:
@@ -17,13 +17,7 @@ Demo: http://34.244.10.159/login
 * [Data munging](https://github.com/eteohx/DublinAI_ChatBot/blob/master/code/preprocessData.ipynb): Pre-processing of movie metadata
 * [Visualising Movie Embeddings](https://github.com/eteohx/DublinAI_ChatBot/blob/master/code/visualise_embeddings.ipynb): Projecting the movie embedding vectors to two dimensions and visualising how movies with various features are distributed in this vector space
 
-## Screenshots of Application
-
-Web interface: 
-
-<img src="https://github.com/eteohx/DublinAI_ChatBot/blob/master/reports/images/webdemo.PNG" width="500" height="350">
-
-Slack interface:
+## Slack interface:
 
 <img src="https://github.com/eteohx/DublinAI_ChatBot/blob/master/reports/images/test_bot.PNG" width="500" height="350">
 
