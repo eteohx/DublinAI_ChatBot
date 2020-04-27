@@ -1,6 +1,7 @@
 # DublinAI_ChatBot
 
-This project explores building a chatbot application that makes movie recommendations to users. 
+This project explores building a chatbot application that makes movie recommendations to users.
+Demo: http://34.244.10.159/login
 
 
 ## Folders and files in this repo:
