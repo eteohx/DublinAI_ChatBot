@@ -1,4 +1,4 @@
-# DublinAI_ChatBot
+# MovieBot
 
 This project explores building a chatbot application that makes movie recommendations to users.
 
