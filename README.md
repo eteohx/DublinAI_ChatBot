@@ -4,7 +4,7 @@ This project explores building a chatbot application that makes movie recommenda
 
 Video explanation: https://www.loom.com/share/941c76accfea4fb7a7660d733f918235
 
-Web application demo: http://34.244.10.159/login
+Web application demo: http://34.244.10.159/login (deployed on an AWS virtual machine)
 
 
 ## Folders and files in this repo
