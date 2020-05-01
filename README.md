@@ -2,7 +2,7 @@
 
 This project explores building a chatbot application that makes movie recommendations to users.
 
-Video explanation: https://www.loom.com/share/4657b46adac2406a9d5e8de4bbfe4e55
+Video explanation: https://www.loom.com/share/941c76accfea4fb7a7660d733f918235
 
 Web application demo: http://34.244.10.159/login
 
