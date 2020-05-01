@@ -31,3 +31,6 @@ Web application demo: http://34.244.10.159/login (deployed on an AWS virtual mac
 
 <sup>Cleaned datasets were too large to be uploaded, but can be provided upon request</sup>
 
+## Tech Stack
+* Python (pandas, pytorch, spaCy)
+* Flask, HTML, CSS, AWS (ec2)
