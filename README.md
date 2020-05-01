@@ -29,4 +29,5 @@ Web application demo: http://34.244.10.159/login (deployed on an AWS virtual mac
 * [Setting up a Slack Bot](https://github.com/slackapi/python-slack-events-api)
 * [Bootstrap CSS Library](https://getbootstrap.com/)
 
+* cleaned datasets are too large for upload, but can be provided upon request
 
