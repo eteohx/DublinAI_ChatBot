@@ -1,7 +1,9 @@
 # DublinAI_ChatBot
 
 This project explores building a chatbot application that makes movie recommendations to users.
+
 Video explanation: https://www.loom.com/share/4657b46adac2406a9d5e8de4bbfe4e55
+
 Web application demo: http://34.244.10.159/login
 
 
